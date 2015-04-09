@@ -1,6 +1,14 @@
 class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
 
+
+  def toggle_activation
+    current_user.active = !current_user.active
+    current_user.save!
+
+    flash[:notice] = "blah"
+    redirect_to root_path
+  end
   # GET /resource/sign_in
   # def new
   #   super

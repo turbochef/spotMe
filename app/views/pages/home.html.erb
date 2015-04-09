@@ -1,2 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<%= link_to "register", new_user_registration_path %>
+
+<%= link_to "login", new_user_session_path %>
+
+<%= link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put %>
+
+<div><%=  current_user.active %></div>

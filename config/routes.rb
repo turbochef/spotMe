@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-   devise_for :users, controllers: { sessions: 'users/sessions'}
+
+ devise_for :users, controllers: { sessions: 'users/sessions'}
+
+
+ devise_scope :user do
+  put 'users/toggle_activation' => 'users/sessions#toggle_activation' 
+end
+
+
   get 'pages/home'
 
   root 'pages#home'
