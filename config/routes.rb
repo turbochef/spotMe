@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
  devise_scope :user do
   put 'users/toggle_activation' => 'users/sessions#toggle_activation' 
+  get 'users/sign_out' => 'users/sessions#destroy'
 end
 
 

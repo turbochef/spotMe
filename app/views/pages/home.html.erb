@@ -1,9 +1,13 @@
 
+<% if(!current_user) %>
 
 <%= link_to "register", new_user_registration_path %>
 
 <%= link_to "login", new_user_session_path %>
 
+<% else %>
+
 <%= link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put %>
 
-<div><%=  current_user.active %></div>
+<div><%= current_user.active %></div>
+<% end %>
