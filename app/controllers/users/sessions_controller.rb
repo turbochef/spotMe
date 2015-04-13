@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
     current_user.active = !current_user.active
     current_user.save!
 
-    flash[:notice] = "blah"
+    flash[:notice] = "Updated"
     redirect_to root_path
   end
   # GET /resource/sign_in
