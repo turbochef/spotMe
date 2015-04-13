@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411235835) do
+ActiveRecord::Schema.define(version: 20150413021839) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20150411235835) do
     t.string   "resource_content_type"
     t.integer  "resource_file_size"
     t.datetime "resource_updated_at"
+    t.boolean  "tennis"
+    t.boolean  "basketball"
+    t.boolean  "racquetball"
+    t.boolean  "soccer"
+    t.boolean  "run"
+    t.boolean  "weights"
+    t.boolean  "swim"
+    t.boolean  "spin"
+    t.boolean  "climb"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

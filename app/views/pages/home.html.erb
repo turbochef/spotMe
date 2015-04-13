@@ -7,6 +7,8 @@
 
 <% else %>
 
+<%= image_tag(current_user.avatar.url(:medium)) %>
+
 <%= link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put %>
 
 <div><%= current_user.active %></div>
