@@ -31,7 +31,7 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'paperclip', '~> 4.2.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'simple_form', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

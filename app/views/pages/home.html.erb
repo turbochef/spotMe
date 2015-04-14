@@ -1,15 +1,20 @@
 
 <% if(!current_user) %>
 
-<%= link_to "register", new_user_registration_path %>
+	<%= link_to "register", new_user_registration_path %>
 
-<%= link_to "login", new_user_session_path %>
+	<%= link_to "login", new_user_session_path %>
 
 <% else %>
 
-<%= image_tag(current_user.avatar.url(:medium)) %>
+	<%= form_for :activities do |f| %>
+		<%= f.check_box :tennis %>
+		<%= f.submit %>
+	<% end %>
 
-<%= link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put %>
+	<%= image_tag(current_user.avatar.url(:medium)) %>
 
-<div><%= current_user.active %></div>
+	<%= link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put %>
+
+	<div><%= current_user.active %></div>
 <% end %>

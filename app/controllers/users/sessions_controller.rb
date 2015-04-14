@@ -9,6 +9,12 @@ class Users::SessionsController < Devise::SessionsController
     flash[:notice] = "Updated"
     redirect_to root_path
   end
+
+  def activities
+    current_user.update_attributes(params[:activities])
+    flash[:notice] = "activities updated"
+    redirect_to root_path
+  end
   # GET /resource/sign_in
   # def new
   #   super
