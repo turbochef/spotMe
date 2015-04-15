@@ -7,14 +7,23 @@
 
 <% else %>
 
-	<%= form_for :activities do |f| %>
-		<%= f.check_box :tennis %>
-		<%= f.submit %>
+	<%= form_for(:user , :url => pages_home_path(:user)) do |f| %>
+	<%= f.check_box :tennis %>tennis<br>
+	<%= f.check_box :basketball %>basketball<br>
+	<%= f.check_box :racquetball %>racquetball<br>
+	<%= f.check_box :soccer %>soccer<br>
+	<%= f.check_box :run %>run<br>
+	<%= f.check_box :weights %>weights<br>
+	<%= f.check_box :swim %>swim<br>
+	<%= f.check_box :spin %>spin<br>
+	<%= f.check_box :climb %>climb<br>
+	<%= f.submit %>
 	<% end %>
-
+	<br>
+<!-- 	link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put -->
+	<br>
 	<%= image_tag(current_user.avatar.url(:medium)) %>
+	<br>
 
-	<%= link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put %>
-
-	<div><%= current_user.active %></div>
+	<div><%= current_user.active %><%= current_user.tennis %></div>
 <% end %>

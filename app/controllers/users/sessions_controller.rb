@@ -11,9 +11,15 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def activities
-    current_user.update_attributes(params[:activities])
-    flash[:notice] = "activities updated"
+    user_params = params.require(:user).permit(:tennis,:basketball, :racquetball, :soccer, :run, :weights, :swim, :spin, :climb)
+    current_user.update_attributes(tennis: user_params[:tennis], basketball: user_params[:basketball],  racquetball: user_params[:racquetball], soccer: user_params[:soccer], run: user_params[:run], weights: user_params[:weights], swim: user_params[:swim], spin: user_params[:spin],climb: user_params[:climb])
+    # current_user.tennis = user_params[:tennis]
+    # current_user.save 
     redirect_to root_path
+  end
+
+  def index
+    @user = current_user
   end
   # GET /resource/sign_in
   # def new

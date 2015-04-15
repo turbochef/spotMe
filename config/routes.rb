@@ -6,13 +6,14 @@ Rails.application.routes.draw do
  devise_scope :user do
   put 'users/toggle_activation' => 'users/sessions#toggle_activation' 
   get 'users/sign_out' => 'users/sessions#destroy'
-  post 'pages/home' => 'users/sessions#activities'
+  get 'users/activities' => 'users/sessions#index'
+  post 'users/activities' => 'users/sessions#activities'
+  root 'users/sessions#index'
 end
 
 
   get 'pages/home'
 
-  root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,67 @@
+
+<% if(!current_user) %>
+
+	<%= link_to "register", new_user_registration_path %>
+
+	<%= link_to "login", new_user_session_path %>
+
+<% else %>
+	<%= form_for :user do |f| %>
+	<div class="ck-button">
+		<label class="checklabel">
+			<%= f.check_box :tennis %><span>tennis</span>
+		</label>
+	</div>
+
+
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :basketball %><span>basketball</span>
+		</label>
+	</div>
+
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :racquetball %><span>racquetball</span>
+		</label>
+	</div>
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :soccer %><span>soccer</span>
+		</label>
+	</div>
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :run %><span>run</span>
+		</label>
+	</div>
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :weights %><span>weights</span>
+		</label>
+	</div>
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :swim %><span>swim</span>
+		</label>
+	</div>
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :spin %><span>spin</span>
+		</label>
+	</div>
+	<div class="ck-button">
+		<label class="checklabel">
+	<%= f.check_box :climb %><span>climb</span>
+		</label>
+	</div>
+	<%= f.submit %>
+	<% end %>
+	<br>
+<!-- 	link_to current_user.active ? "Set inactive" : "Set active" ,users_toggle_activation_path, method: :put -->
+	<br>
+	<%= image_tag(current_user.avatar.url(:medium)) %>
+	<br>
+
+	<div><%= current_user.active %><%= current_user.tennis %></div>
+<% end %>
