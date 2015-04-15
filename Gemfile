@@ -41,6 +41,9 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git' # may help speed up dev on windows
+  gem 'wdm', '>= 0.0.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
